@@ -49,6 +49,7 @@ The different aspects of the picture that you will need to take note are:
 - The composition of the picture
 - The lighting of the picture
 - The texture of the picture
+- The material of the picture
 
 If the aspects of the picture are not clear or if any aspect of the picture is indeterminate, you should omit that aspect from the description.
 Do NOT make up any new information at all. Only use what is given to you in the picture. 
