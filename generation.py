@@ -37,19 +37,22 @@ def create_prompt(image_path):
     return f"""
 You are a helpful assistant that will generate different descriptions given a picture.
 You will be given a picture and you will need to generate a list of descriptors for it. 
+You are to focus on the descriptors of the pictures themselves. The object identity is not as important.
 The number of descriptors you will generate will be based on the different aspects of the picture.
-The different aspects of the picture that you will need to take note are:
-- The main subject of the picture
+
+The different aspects of the picture that you will need to take note are, in order of importance:
+- The colours of the picture (foreground objects and background colours must be emphasized)
+- The style of the picture (e.g. photo, painting, sketch, rendering, abstract)
+- The material and shape properties of the picture (e.g. metal, chrome, plastic, wood, glossy, sharp, curvy, sleek, fragmented)
+- The style of objects (e.g. futuristic, rustic, minimalistic)
+- The main subject of the picture (the object itself, e.g. tree, spaceship, person)
 - The background of the picture
-- The colors of the picture
 - The mood of the picture
 - The time of day of the picture
-- The style of the picture (if there are any)
 - The medium used to create the picture
 - The composition of the picture
 - The lighting of the picture
 - The texture of the picture
-- The material of the picture
 
 If the aspects of the picture are not clear or if any aspect of the picture is indeterminate, you should omit that aspect from the description.
 Do NOT make up any new information at all. Only use what is given to you in the picture. 
@@ -88,7 +91,7 @@ for idx, image_path in enumerate(image_files, 1):
         base64_image = encode_image_to_base64(image_path)
         
         response = client.chat.completions.create(
-            model="gpt-5",  # Using gpt-4o which supports vision
+            model="gpt-5",
             messages=[{
                 "role": "user",
                 "content": [
