@@ -5,34 +5,84 @@ import os
 import base64
 from pathlib import Path
 from dotenv import load_dotenv
+import uuid
+import logging
+from typing import Dict, List, Optional
 load_dotenv()
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+# Configuration
+CONFIG = {
+    "image_folder": "Kwang Yang SREF Tests",
+    "descriptions_dir": "descriptions",
+    "model": "gpt-5", 
+    "image_extensions": {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.webp'},
+    "max_retries": 3,
+    "batch_size": 10  # Process in batches for better progress tracking
+}
 
 client = OpenAI()
 
-# Define the folder containing the images
-image_folder = "Kwang Yang SREF Tests"
+def load_existing_descriptions(descriptions_dir: str = CONFIG["descriptions_dir"]) -> Dict:
+    """Load all existing descriptions from JSON files."""
+    existing_descriptions = {}
+    descriptions_path = Path(descriptions_dir)
+    
+    if descriptions_path.exists():
+        for desc_file in descriptions_path.glob("descriptions.json"):
+            try:
+                with open(desc_file, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    existing_descriptions.update(data)
+                logger.info(f"Loaded {len(data)} descriptions from {desc_file.name}")
+            except (json.JSONDecodeError, FileNotFoundError) as e:
+                logger.warning(f"Could not load {desc_file.name}: {e}")
+    
+    logger.info(f"Total existing descriptions: {len(existing_descriptions)}")
+    return existing_descriptions
 
-# Get all image files from the folder
-image_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.webp'}
-image_files = []
+def get_image_files(image_folder: str = CONFIG["image_folder"], 
+                   existing_descriptions: Optional[Dict] = None) -> tuple[List[Path], List[Path]]:
+    """Get all image files and filter out already processed ones."""
+    if existing_descriptions is None:
+        existing_descriptions = {}
+    
+    image_extensions = CONFIG["image_extensions"]
+    all_image_files = []
+    
+    image_path = Path(image_folder)
+    if not image_path.exists():
+        logger.error(f"Image folder does not exist: {image_folder}")
+        return [], []
+    
+    for file_path in image_path.iterdir():
+        if file_path.is_file() and file_path.suffix.lower() in image_extensions:
+            all_image_files.append(file_path)
+    
+    # Only process images that haven't been processed before
+    new_image_files = [img for img in all_image_files if img.name not in existing_descriptions]
+    
+    logger.info(f"Found {len(all_image_files)} total image files")
+    logger.info(f"Found {len(new_image_files)} new image files to process")
+    
+    return all_image_files, new_image_files
 
-# Get the first 5 image files from the folder
-for file_path in Path(image_folder).iterdir():
-    if file_path.is_file() and file_path.suffix.lower() in image_extensions:
-        image_files.append(file_path)
-        if len(image_files) >= 5:  # Stop after finding 5 images
-            break
+def encode_image_to_base64(image_path: Path) -> str:
+    """Convert image file to base64 encoded string with error handling."""
+    try:
+        with open(image_path, "rb") as image_file:
+            return base64.b64encode(image_file.read()).decode('utf-8')
+    except Exception as e:
+        logger.error(f"Failed to encode image {image_path}: {e}")
+        raise
 
-print(f"Found {len(image_files)} image files to process")
-
-descriptions = {}
-
-def encode_image_to_base64(image_path):
-    """Convert image file to base64 encoded string"""
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode('utf-8')
-
-def create_prompt(image_path):
+def create_prompt(image_path: Path) -> str:
     """Create the prompt with the specific image path"""
     return f"""
 You are a helpful assistant that will generate different descriptions given a picture.
@@ -60,7 +110,7 @@ When you return the list, you are to NOT have the sub-topic in front of the desc
 
 You are to return a JSON object in the following format:
     {{
-        "id": 1,
+        "id": {uuid.uuid4()},
         "path": "{image_path}",
         "description": [
             "Descriptor 1 of the picture",
@@ -68,7 +118,7 @@ You are to return a JSON object in the following format:
             "Descriptor 3 of the picture"
         ]
     }}
-The path has already been provided to you in the example itself, so reuse this path.
+The id and path have already been provided to you in the example itself, so reuse this path.
 """
 
 class Description(BaseModel):
@@ -82,60 +132,147 @@ class Description(BaseModel):
     path: str
     description: list[str]
 
-# Process each image file
-for idx, image_path in enumerate(image_files, 1):
-    print(f"Processing image {idx}/{len(image_files)}: {image_path.name}")
+def process_single_image(image_path: Path, idx: int) -> Dict:
+    """Process a single image and return its description."""
+    logger.info(f"Processing image {idx}: {image_path.name}")
     
-    try:
-        # Encode the image to base64
-        base64_image = encode_image_to_base64(image_path)
-        
-        response = client.chat.completions.create(
-            model="gpt-5",
-            messages=[{
-                "role": "user",
-                "content": [
-                    {"type": "text", "text": create_prompt(image_path)},
-                    {
-                        "type": "image_url",
-                        "image_url": {
-                            "url": f"data:image/jpeg;base64,{base64_image}",
+    for attempt in range(CONFIG["max_retries"]):
+        try:
+            # Encode the image to base64
+            base64_image = encode_image_to_base64(image_path)
+            
+            response = client.chat.completions.create(
+                model=CONFIG["model"],
+                messages=[{
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": create_prompt(image_path)},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/jpeg;base64,{base64_image}",
+                            },
                         },
-                    },
-                ],
-            }],
-            response_format={"type": "json_object"},
-        )
+                    ],
+                }],
+                response_format={"type": "json_object"},
+            )
 
-        # Parse the JSON response
-        response_content = response.choices[0].message.content
-        description_data = json.loads(response_content)
-        
-        # Store the description with the filename as key
-        descriptions[image_path.name] = description_data
-        
-        print(f"Successfully processed: {image_path.name}")
-        
+            # Parse the JSON response
+            response_content = response.choices[0].message.content
+            description_data = json.loads(response_content)
+            
+            # Validate that we got expected fields
+            if not all(key in description_data for key in ["id", "path", "description"]):
+                raise ValueError(f"Missing required fields in response: {description_data}")
+            
+            logger.info(f"Successfully processed: {image_path.name}")
+            return description_data
+            
+        except Exception as e:
+            logger.warning(f"Attempt {attempt + 1}/{CONFIG['max_retries']} failed for {image_path.name}: {e}")
+            if attempt == CONFIG["max_retries"] - 1:
+                # Final attempt failed, store error information
+                logger.error(f"Failed to process {image_path.name} after {CONFIG['max_retries']} attempts")
+                return {
+                    "error": str(e),
+                    "path": str(image_path),
+                    "id": idx
+                }
+    
+    # This shouldn't be reached, but just in case
+    return {
+        "error": "Unknown error",
+        "path": str(image_path),
+        "id": idx
+    }
+
+def save_descriptions(new_descriptions: Dict, descriptions_dir: str = CONFIG["descriptions_dir"]) -> Optional[str]:
+    """Save new descriptions to a numbered JSON file."""
+    if not new_descriptions:
+        logger.info("No new descriptions to save.")
+        return None
+    
+    # Create descriptions folder if it doesn't exist
+    os.makedirs(descriptions_dir, exist_ok=True)
+    
+    # Get next file number
+    try:
+        existing_files = [f for f in os.listdir(descriptions_dir) 
+                         if f.startswith("descriptions_") and f.endswith(".json")]
+        if existing_files:
+            numbers = []
+            for f in existing_files:
+                try:
+                    num = int(f.replace("descriptions_", "").replace(".json", ""))
+                    numbers.append(num)
+                except ValueError:
+                    continue
+            next_num = max(numbers) + 1 if numbers else 1
+        else:
+            next_num = 1
+    except FileNotFoundError:
+        next_num = 1
+    
+    # Save to file
+    output_file = f"{descriptions_dir}/descriptions_{next_num}.json"
+    try:
+        with open(output_file, "w", encoding='utf-8') as f:
+            json.dump(new_descriptions, f, indent=2, ensure_ascii=False)
+        logger.info(f"Saved {len(new_descriptions)} new descriptions to {output_file}")
+        return output_file
     except Exception as e:
-        print(f"Error processing {image_path.name}: {str(e)}")
-        # Store error information
-        descriptions[image_path.name] = {
-            "error": str(e),
-            "path": str(image_path),
-            "id": idx
-        }
+        logger.error(f"Failed to save descriptions: {e}")
+        raise
 
-# Create descriptions folder if it doesn't exist
-os.makedirs("descriptions", exist_ok=True)
+def main(image_folder: str = CONFIG["image_folder"], 
+         descriptions_dir: str = CONFIG["descriptions_dir"]) -> Optional[str]:
+    """Main processing function."""
+    logger.info("Starting image description generation")
+    
+    # Load existing descriptions
+    existing_descriptions = load_existing_descriptions(descriptions_dir)
+    
+    # Get image files to process
+    all_image_files, new_image_files = get_image_files(image_folder, existing_descriptions)
+    
+    if not new_image_files:
+        logger.info("No new images to process. All images have already been described.")
+        return None
+    
+    # Process images
+    descriptions = existing_descriptions.copy()
+    successful_count = 0
+    error_count = 0
+    
+    for idx, image_path in enumerate(new_image_files, 1):
+        result = process_single_image(image_path, idx)
+        descriptions[image_path.name] = result
+        
+        if "error" in result:
+            error_count += 1
+        else:
+            successful_count += 1
+        
+        # Progress update
+        if idx % CONFIG["batch_size"] == 0 or idx == len(new_image_files):
+            logger.info(f"Progress: {idx}/{len(new_image_files)} images processed "
+                       f"({successful_count} successful, {error_count} errors)")
+    
+    # Save only new descriptions
+    new_descriptions = {k: v for k, v in descriptions.items() if k not in existing_descriptions}
+    output_file = save_descriptions(new_descriptions, descriptions_dir)
+    
+    logger.info(f"Processing complete! {successful_count} successful, {error_count} errors")
+    return output_file
 
-# Count existing description files
-try:
-    num_descriptions = len([f for f in os.listdir("descriptions") if os.path.isfile(os.path.join("descriptions", f))])
-except FileNotFoundError:
-    num_descriptions = 0
-
-# Save all descriptions to JSON file
-with open(f"descriptions/descriptions_{num_descriptions + 1}.json", "w", encoding='utf-8') as f:
-    json.dump(descriptions, f, indent=2, ensure_ascii=False)
-
-print(f"Processing complete! Results saved to descriptions/descriptions_{num_descriptions + 1}.json")
+if __name__ == "__main__":
+    try:
+        output_file = main()
+        if output_file:
+            logger.info(f"Results saved to: {output_file}")
+    except KeyboardInterrupt:
+        logger.info("Processing interrupted by user")
+    except Exception as e:
+        logger.error(f"Fatal error: {e}")
+        raise
