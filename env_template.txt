@@ -1,0 +1,7 @@
+# Copy this file to .env and fill in your API keys
+
+# OpenAI API Key (required for generation.py and arithmetic.py)
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Pinecone API Key (required for insertion.py when uncommented)
+PINECONE_API_KEY=your_pinecone_api_key_here

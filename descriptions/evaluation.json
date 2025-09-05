@@ -1,0 +1,472 @@
+{
+  "08619175-711e-4fb8-8c73-9c298eed8a46.jpeg": [
+    {
+      "paraphrased_prompt": "Stunning monochrome presentation",
+      "paraphrase_type": "positive",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Artfully subtle shading technique",
+      "paraphrase_type": "positive",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Exquisite precision in line art",
+      "paraphrase_type": "positive",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Impressive multi-level architecture",
+      "paraphrase_type": "positive",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Exceptional use of negative space for clarity",
+      "paraphrase_type": "positive",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Dull",
+      "paraphrase_type": "negative",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "lifeless monochrome palette",
+      "paraphrase_type": "negative",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Inconsistent and clumsy architectural sketch style",
+      "paraphrase_type": "negative",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Bulky and unappealing exterior volumes",
+      "paraphrase_type": "negative",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Excessive minimalism resulting in a lack of warmth",
+      "paraphrase_type": "negative",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Overuse of negative space leading to a sense of emptiness",
+      "paraphrase_type": "negative",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Stark canvas of black ink intricacies bathed in a sea of white",
+      "paraphrase_type": "noisy",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Dreamlike smoky shading creating depth through soft gray hues",
+      "paraphrase_type": "noisy",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "An architectural blueprint melded with the precision of an engineer’s mind",
+      "paraphrase_type": "noisy",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Clunky yet enticing structures reminiscent of ancient mollusk shells",
+      "paraphrase_type": "noisy",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    },
+    {
+      "paraphrased_prompt": "Minimalist architectural lexicon intertwining with whispers of a bygone future.",
+      "paraphrase_type": "noisy",
+      "picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+    }
+  ],
+  "25aaa2c3-e41e-4753-a1b3-c8e449398560.jpeg": [
+    {
+      "paraphrased_prompt": "Charming monochrome blue and white palette",
+      "paraphrase_type": "positive",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Intricate architectural sketch style",
+      "paraphrase_type": "positive",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Modern minimalist aesthetic",
+      "paraphrase_type": "positive",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Enthralling bird’s-eye perspective",
+      "paraphrase_type": "positive",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Smooth planar surfaces elegantly contrasted with sketchy foliage",
+      "paraphrase_type": "positive",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Uninspired blue and white palette",
+      "paraphrase_type": "negative",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Boxy and unoriginal volumes",
+      "paraphrase_type": "negative",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Excessive simplification via modern aesthetic",
+      "paraphrase_type": "negative",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Lack of detail in loose line drawing",
+      "paraphrase_type": "negative",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Unimaginative and flat lighting",
+      "paraphrase_type": "negative",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Azure and ivory color harmony",
+      "paraphrase_type": "noisy",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Scribbled architectural fantasy",
+      "paraphrase_type": "noisy",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Minimalism meets modernism amalgamation",
+      "paraphrase_type": "noisy",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Contemporary structural labyrinth as the protagonist",
+      "paraphrase_type": "noisy",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    },
+    {
+      "paraphrased_prompt": "Aerial viewpoint amplifying spatial depth.",
+      "paraphrase_type": "noisy",
+      "picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e"
+    }
+  ],
+  "3de8d58abd8c415cbc9418c1c672056a.jpeg": [
+    {
+      "paraphrased_prompt": "Radiant chrome-silver centerpiece",
+      "paraphrase_type": "positive",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Graceful transition of gradient gray background",
+      "paraphrase_type": "positive",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Sophisticated sleek and reflective properties",
+      "paraphrase_type": "positive",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Captivating abstract contemporary style",
+      "paraphrase_type": "positive",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Polished mirror-like texture.",
+      "paraphrase_type": "positive",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Drab gradient background lacking vibrancy",
+      "paraphrase_type": "negative",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Overly polished metallic surface losing authenticity",
+      "paraphrase_type": "negative",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Shapeless and confusing abstract object",
+      "paraphrase_type": "negative",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Excessive negative space undermining composition",
+      "paraphrase_type": "negative",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Unimaginative and sterile monochrome palette",
+      "paraphrase_type": "negative",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "A mirrored masterpiece gleaming with monochrome metallic might",
+      "paraphrase_type": "noisy",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Curvaceous form sculpted by a futuristic Michelangelo",
+      "paraphrase_type": "noisy",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Refined",
+      "paraphrase_type": "noisy",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "unadorned surface in a dance of silver and shades",
+      "paraphrase_type": "noisy",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Clean-cut minimalism bathed in an ethereal studio glow",
+      "paraphrase_type": "noisy",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    },
+    {
+      "paraphrased_prompt": "Vignette-framed sea of gradient gray mirroring the sober twilight",
+      "paraphrase_type": "noisy",
+      "picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0"
+    }
+  ],
+  "588de0ac-4f94-49b6-8f1d-9e9480c23207 2.jpeg": [
+    {
+      "paraphrased_prompt": "Harmonious blend of soothing blues",
+      "paraphrase_type": "positive",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "whites",
+      "paraphrase_type": "positive",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "and greys",
+      "paraphrase_type": "positive",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Evocative glassy textures set against delicate wood grain",
+      "paraphrase_type": "positive",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Futuristic and minimalist architectural inspiration",
+      "paraphrase_type": "positive",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Elegant",
+      "paraphrase_type": "positive",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "hand-drawn lines softened with watercolor washes",
+      "paraphrase_type": "positive",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "The tranquil",
+      "paraphrase_type": "positive",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "airy mood infused with gentle daylight.",
+      "paraphrase_type": "positive",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Dominance of uninspiring light blues",
+      "paraphrase_type": "negative",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "whites",
+      "paraphrase_type": "negative",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "and soft greys",
+      "paraphrase_type": "negative",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Lackluster beige and light wood accents failing to add depth",
+      "paraphrase_type": "negative",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Uninspiring architectural sketch lacking precision",
+      "paraphrase_type": "negative",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Overly simplistic",
+      "paraphrase_type": "negative",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "featureless construction language",
+      "paraphrase_type": "negative",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Absence of warmth in cold",
+      "paraphrase_type": "negative",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "sterile modern architecture.",
+      "paraphrase_type": "negative",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Gentle symphony of azure",
+      "paraphrase_type": "noisy",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "pearl",
+      "paraphrase_type": "noisy",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "and dove gray hues",
+      "paraphrase_type": "noisy",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Sleek structures whispering modern tales in soft outlines",
+      "paraphrase_type": "noisy",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Earthy wooden nuances subtly gracing mini elements",
+      "paraphrase_type": "noisy",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Breath of tomorrow captured in minimalist architectural dance",
+      "paraphrase_type": "noisy",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    },
+    {
+      "paraphrased_prompt": "Illuminated by a soft glow casting ghostly shadows.",
+      "paraphrase_type": "noisy",
+      "picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6"
+    }
+  ],
+  "dbf0dbb9-38c1-4855-b900-851abec5af2c.jpeg": [
+    {
+      "paraphrased_prompt": "Lustrous white and soft gray color palette with vibrant orange-yellow highlights",
+      "paraphrase_type": "positive",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Sleek",
+      "paraphrase_type": "positive",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "minimalist backdrop",
+      "paraphrase_type": "positive",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Detailed and innovative concept sketch design",
+      "paraphrase_type": "positive",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "A singular",
+      "paraphrase_type": "positive",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "futuristic robotic masterpiece as the centerpiece",
+      "paraphrase_type": "positive",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Elegant mix of smooth and angular elements adding visual intrigue.",
+      "paraphrase_type": "positive",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Overbearing white and gray surfaces with insignificant color accents",
+      "paraphrase_type": "negative",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Stark white background offering no visual interest",
+      "paraphrase_type": "negative",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Sketch style overly complicated and difficult to interpret",
+      "paraphrase_type": "negative",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Single robotic subject lacks variety and engagement",
+      "paraphrase_type": "negative",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Side profile view with too much empty",
+      "paraphrase_type": "negative",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "wasted space",
+      "paraphrase_type": "negative",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Overwhelmingly white canvas accented with specks of bright scarlet",
+      "paraphrase_type": "noisy",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Bare minimalist backdrop devoid of any peripheral distractions",
+      "paraphrase_type": "noisy",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Rigid body composed of a cocktail of cylinders",
+      "paraphrase_type": "noisy",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "boxes",
+      "paraphrase_type": "noisy",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "and orbs",
+      "paraphrase_type": "noisy",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Industrial chic design with a whiff of the future",
+      "paraphrase_type": "noisy",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    },
+    {
+      "paraphrased_prompt": "Shadowless flat light kissing the sketched mechanical wonder.",
+      "paraphrase_type": "noisy",
+      "picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e"
+    }
+  ]
+}

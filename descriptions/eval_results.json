@@ -1,0 +1,711 @@
+{
+  "accuracy_stats": {
+    "overall_accuracy": 0.6333333333333333,
+    "total_queries": 30,
+    "correct_retrievals": 19,
+    "accuracy_by_type": {
+      "positive_negative": {
+        "correct": 10,
+        "total": 15,
+        "accuracy": 0.6666666666666666
+      },
+      "noisy_negative": {
+        "correct": 9,
+        "total": 15,
+        "accuracy": 0.6
+      }
+    }
+  },
+  "detailed_results": [
+    {
+      "original_picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+      "positive": "Stunning monochrome presentation",
+      "negative": "Bulky and unappealing exterior volumes",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "74a3cb6c-a710-4e75-bef2-f275fac28783",
+        "fc72e558-b93b-4fe8-9e2d-1c2d65fba3e1",
+        "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+        "fc72e558-b93b-4fe8-9e2d-1c2d65fba3e1",
+        "72e384e7-f1cc-44ba-bd47-b00e0bba878d",
+        "a6ab242b-8fed-4eed-82e8-053b17bdb9d7",
+        "dab688dd-fbbd-4f8e-938a-007834a0eb58",
+        "2a519739-7773-4354-85a1-fba3f6bf92c7",
+        "8957a2d8-7f38-4bb1-aab1-d06ec7338134",
+        "cbf5304a-69f0-43cc-9283-241361610f2a"
+      ],
+      "query_strings": [
+        "Stunning monochrome presentation",
+        "Bulky and unappealing exterior volumes"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+      "positive": "Artfully subtle shading technique",
+      "negative": "Inconsistent and clumsy architectural sketch style",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "2aefc88e-c16f-4132-a99c-80670e6e8b6c",
+        "ab55c037-2cfe-46f9-901e-2e966c86eb98",
+        "c748e07e-8b34-4768-9586-e0817e6f3ce9",
+        "56a86805-b954-4a0a-b587-e0150b63541c",
+        "9a5fd5aa-d2b9-4021-8c61-931652fbceb6",
+        "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+        "a6ab242b-8fed-4eed-82e8-053b17bdb9d7",
+        "a322afcc-b3bf-4b8b-af46-62cdcbca6478",
+        "a6ab242b-8fed-4eed-82e8-053b17bdb9d7",
+        "8758053f-a34a-4f8b-8694-ee20bb6295e3"
+      ],
+      "query_strings": [
+        "Artfully subtle shading technique",
+        "Inconsistent and clumsy architectural sketch style"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+      "positive": "Exceptional use of negative space for clarity",
+      "negative": "Excessive minimalism resulting in a lack of warmth",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+        "c1bff9bc-02a9-474a-92ca-c937784cd5d6",
+        "89b7e580-7765-46dd-a15b-02500580a306",
+        "244df75b-458b-43dc-9824-85e051dc65e2",
+        "a322afcc-b3bf-4b8b-af46-62cdcbca6478",
+        "7",
+        "3e1aa137-2301-4972-9212-0421fda319bd",
+        "d2e50bae-1275-4d77-a4ce-4dc5605fccf1",
+        "165ebb76-4c99-444f-8dc2-af8897986407",
+        "b6b897c3-cfd0-47a8-823f-588087a75f1a"
+      ],
+      "query_strings": [
+        "Exceptional use of negative space for clarity",
+        "Excessive minimalism resulting in a lack of warmth"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+      "positive": "Clunky yet enticing structures reminiscent of ancient mollusk shells",
+      "negative": "lifeless monochrome palette",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "018943a8-3180-4d42-9615-842fb21f9bbd",
+        "585074c4-a8ed-4dd6-8d5f-2b3a3b553d0d",
+        "816429c8-e23f-4abd-a9c0-722c7440921a",
+        "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+        "2a519739-7773-4354-85a1-fba3f6bf92c7",
+        "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0",
+        "9dc7def9-826a-41a3-a60e-856cef523f9e",
+        "71ae6c61-a849-4296-9648-8d0a7435b9d7",
+        "db7eb434-9531-4598-b99b-707a386be404",
+        "9350d8e0-12dd-4ac4-aac4-7febf3382f37"
+      ],
+      "query_strings": [
+        "Clunky yet enticing structures reminiscent of ancient mollusk shells",
+        "lifeless monochrome palette"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+      "positive": "An architectural blueprint melded with the precision of an engineer’s mind",
+      "negative": "Excessive minimalism resulting in a lack of warmth",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+        "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+        "843a3784-4b2c-48ef-9a85-73fbc314307e",
+        "33e90383-2a54-46ea-ac9d-1f34c453ed0c",
+        "62404e9b-2fd6-4709-96bb-fe5a2262001e",
+        "33e90383-2a54-46ea-ac9d-1f34c453ed0c",
+        "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+        "8758053f-a34a-4f8b-8694-ee20bb6295e3",
+        "7",
+        "88dcf7e0-4379-4a2d-93af-8a7510a3275c"
+      ],
+      "query_strings": [
+        "An architectural blueprint melded with the precision of an engineer’s mind",
+        "Excessive minimalism resulting in a lack of warmth"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+      "positive": "Stark canvas of black ink intricacies bathed in a sea of white",
+      "negative": "lifeless monochrome palette",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "33e90383-2a54-46ea-ac9d-1f34c453ed0c",
+        "88dcf7e0-4379-4a2d-93af-8a7510a3275c",
+        "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+        "6b541432-e291-42d0-a5d5-b88c539fc56c",
+        "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+        "55ed88d4-c93d-416f-9f3c-f1b4cbcc3e6e",
+        "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+        "8957a2d8-7f38-4bb1-aab1-d06ec7338134",
+        "74a3cb6c-a710-4e75-bef2-f275fac28783",
+        "4c961413-2691-4398-a70a-a49f81d535c3"
+      ],
+      "query_strings": [
+        "Stark canvas of black ink intricacies bathed in a sea of white",
+        "lifeless monochrome palette"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e",
+      "positive": "Intricate architectural sketch style",
+      "negative": "Excessive simplification via modern aesthetic",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "843a3784-4b2c-48ef-9a85-73fbc314307e",
+        "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+        "71ae6c61-a849-4296-9648-8d0a7435b9d7",
+        "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+        "6b541432-e291-42d0-a5d5-b88c539fc56c",
+        "74a3cb6c-a710-4e75-bef2-f275fac28783",
+        "8957a2d8-7f38-4bb1-aab1-d06ec7338134",
+        "dab688dd-fbbd-4f8e-938a-007834a0eb58",
+        "88dcf7e0-4379-4a2d-93af-8a7510a3275c",
+        "b6b897c3-cfd0-47a8-823f-588087a75f1a"
+      ],
+      "query_strings": [
+        "Intricate architectural sketch style",
+        "Excessive simplification via modern aesthetic"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e",
+      "positive": "Charming monochrome blue and white palette",
+      "negative": "Boxy and unoriginal volumes",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "843a3784-4b2c-48ef-9a85-73fbc314307e",
+        "2a519739-7773-4354-85a1-fba3f6bf92c7",
+        "8957a2d8-7f38-4bb1-aab1-d06ec7338134",
+        "dab688dd-fbbd-4f8e-938a-007834a0eb58",
+        "fc72e558-b93b-4fe8-9e2d-1c2d65fba3e1",
+        "244df75b-458b-43dc-9824-85e051dc65e2",
+        "06eace2b-58a7-4f74-b9b1-dc48ded285db",
+        "d0ca6a36-1fb5-4237-84e8-e00bb7e557eb",
+        "c170f0dd-fa90-4ae3-8f0e-fc8c7e1e7d3e",
+        "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+      ],
+      "query_strings": [
+        "Charming monochrome blue and white palette",
+        "Boxy and unoriginal volumes"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e",
+      "positive": "Modern minimalist aesthetic",
+      "negative": "Uninspired blue and white palette",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "443abae5-15be-4b90-9560-d09272182602",
+        "33e90383-2a54-46ea-ac9d-1f34c453ed0c",
+        "c748e07e-8b34-4768-9586-e0817e6f3ce9",
+        "843a3784-4b2c-48ef-9a85-73fbc314307e",
+        "585074c4-a8ed-4dd6-8d5f-2b3a3b553d0d",
+        "8f6f6580-3157-4382-9901-036b78502968",
+        "72e384e7-f1cc-44ba-bd47-b00e0bba878d",
+        "188b9c9e-496a-4f26-a27f-c62653ae1e23",
+        "55ed88d4-c93d-416f-9f3c-f1b4cbcc3e6e",
+        "a6ab242b-8fed-4eed-82e8-053b17bdb9d7"
+      ],
+      "query_strings": [
+        "Modern minimalist aesthetic",
+        "Uninspired blue and white palette"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e",
+      "positive": "Aerial viewpoint amplifying spatial depth.",
+      "negative": "Boxy and unoriginal volumes",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "843a3784-4b2c-48ef-9a85-73fbc314307e",
+        "4c961413-2691-4398-a70a-a49f81d535c3",
+        "6b1b8043-5a69-4036-90f2-dd01290bf4fe",
+        "a5bba5f2-8ca2-4a3a-bf47-eb6a86f4ab92",
+        "a4bbacaf-8d7b-4930-a170-f83f60f911d8",
+        "091c5997-c304-4708-b06c-3f50d2e5be4b",
+        "c2b6f39c-c794-4cc9-842d-96974048ed18",
+        "d167a3c4-03ed-4471-90f4-585743019bb9",
+        "018943a8-3180-4d42-9615-842fb21f9bbd",
+        "d167a3c4-03ed-4471-90f4-585743019bb9"
+      ],
+      "query_strings": [
+        "Aerial viewpoint amplifying spatial depth.",
+        "Boxy and unoriginal volumes"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e",
+      "positive": "Contemporary structural labyrinth as the protagonist",
+      "negative": "Lack of detail in loose line drawing",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "843a3784-4b2c-48ef-9a85-73fbc314307e",
+        "816429c8-e23f-4abd-a9c0-722c7440921a",
+        "843a3784-4b2c-48ef-9a85-73fbc314307e",
+        "8957a2d8-7f38-4bb1-aab1-d06ec7338134",
+        "174ab7bd-604f-4483-8ba8-35eae377dd11",
+        "0.0",
+        "63e5db15-0a71-42ec-b33c-9b77865c88e0",
+        "c170f0dd-fa90-4ae3-8f0e-fc8c7e1e7d3e",
+        "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+        "683b232d-f55f-4eb7-bc1d-0271f2b27776"
+      ],
+      "query_strings": [
+        "Contemporary structural labyrinth as the protagonist",
+        "Lack of detail in loose line drawing"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "843a3784-4b2c-48ef-9a85-73fbc314307e",
+      "positive": "Contemporary structural labyrinth as the protagonist",
+      "negative": "Boxy and unoriginal volumes",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "843a3784-4b2c-48ef-9a85-73fbc314307e",
+        "843a3784-4b2c-48ef-9a85-73fbc314307e",
+        "88dcf7e0-4379-4a2d-93af-8a7510a3275c",
+        "8957a2d8-7f38-4bb1-aab1-d06ec7338134",
+        "816429c8-e23f-4abd-a9c0-722c7440921a",
+        "4c961413-2691-4398-a70a-a49f81d535c3",
+        "468da0cc-51e7-4b79-bc15-20c029a9c159",
+        "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0",
+        "b18e2c3f-ae77-427d-90c3-b8c6e2dea1e4",
+        "174ab7bd-604f-4483-8ba8-35eae377dd11"
+      ],
+      "query_strings": [
+        "Contemporary structural labyrinth as the protagonist",
+        "Boxy and unoriginal volumes"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0",
+      "positive": "Captivating abstract contemporary style",
+      "negative": "Shapeless and confusing abstract object",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "174ab7bd-604f-4483-8ba8-35eae377dd11",
+        "90f2241d-db26-46fc-a758-7fa4e6d9d691",
+        "72e384e7-f1cc-44ba-bd47-b00e0bba878d",
+        "a639a873-9009-41be-9a40-5b0cd674ad07",
+        "683b232d-f55f-4eb7-bc1d-0271f2b27776",
+        "a6ab242b-8fed-4eed-82e8-053b17bdb9d7",
+        "d22bfbf5-083c-4620-af1d-250f7142f11e",
+        "0.0",
+        "816429c8-e23f-4abd-a9c0-722c7440921a",
+        "89939dd6-78aa-44e4-8ae0-fab8d354e669"
+      ],
+      "query_strings": [
+        "Captivating abstract contemporary style",
+        "Shapeless and confusing abstract object"
+      ],
+      "is_correct": false
+    },
+    {
+      "original_picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0",
+      "positive": "Polished mirror-like texture.",
+      "negative": "Overly polished metallic surface losing authenticity",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0",
+        "468da0cc-51e7-4b79-bc15-20c029a9c159",
+        "0877bf40-4684-4043-8747-4d53b1b5902e",
+        "443abae5-15be-4b90-9560-d09272182602",
+        "88dcf7e0-4379-4a2d-93af-8a7510a3275c",
+        "2b3bd8c9-adba-4ac4-8506-8c952e46b585",
+        "1135c712-811d-48fb-84cf-e48d6329e10b",
+        "165ebb76-4c99-444f-8dc2-af8897986407",
+        "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0",
+        "8ffa5f2d-c863-434d-8782-f82708712b8c"
+      ],
+      "query_strings": [
+        "Polished mirror-like texture.",
+        "Overly polished metallic surface losing authenticity"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0",
+      "positive": "Radiant chrome-silver centerpiece",
+      "negative": "Drab gradient background lacking vibrancy",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "25ddd8b3-13ca-4c9a-bccb-cc06605dea95",
+        "2b3bd8c9-adba-4ac4-8506-8c952e46b585",
+        "63e5c813-9883-4af5-8df0-c5b3f0fb261b",
+        "fc72e558-b93b-4fe8-9e2d-1c2d65fba3e1",
+        "75951bbc-11e1-4861-acfa-b910daa025d8",
+        "63e5db15-0a71-42ec-b33c-9b77865c88e0",
+        "443abae5-15be-4b90-9560-d09272182602",
+        "9dc7def9-826a-41a3-a60e-856cef523f9e",
+        "89939dd6-78aa-44e4-8ae0-fab8d354e669",
+        "2a519739-7773-4354-85a1-fba3f6bf92c7"
+      ],
+      "query_strings": [
+        "Radiant chrome-silver centerpiece",
+        "Drab gradient background lacking vibrancy"
+      ],
+      "is_correct": false
+    },
+    {
+      "original_picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0",
+      "positive": "Curvaceous form sculpted by a futuristic Michelangelo",
+      "negative": "Excessive negative space undermining composition",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "c170f0dd-fa90-4ae3-8f0e-fc8c7e1e7d3e",
+        "a322afcc-b3bf-4b8b-af46-62cdcbca6478",
+        "585074c4-a8ed-4dd6-8d5f-2b3a3b553d0d",
+        "db7eb434-9531-4598-b99b-707a386be404",
+        "9a5fd5aa-d2b9-4021-8c61-931652fbceb6",
+        "7",
+        "fc72e558-b93b-4fe8-9e2d-1c2d65fba3e1",
+        "174ab7bd-604f-4483-8ba8-35eae377dd11",
+        "8758053f-a34a-4f8b-8694-ee20bb6295e3",
+        "0877bf40-4684-4043-8747-4d53b1b5902e"
+      ],
+      "query_strings": [
+        "Curvaceous form sculpted by a futuristic Michelangelo",
+        "Excessive negative space undermining composition"
+      ],
+      "is_correct": false
+    },
+    {
+      "original_picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0",
+      "positive": "Vignette-framed sea of gradient gray mirroring the sober twilight",
+      "negative": "Drab gradient background lacking vibrancy",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "4c961413-2691-4398-a70a-a49f81d535c3",
+        "da3a43f2-5237-4811-949e-d980d8597ffb",
+        "d167a3c4-03ed-4471-90f4-585743019bb9",
+        "4c961413-2691-4398-a70a-a49f81d535c3",
+        "c2b6f39c-c794-4cc9-842d-96974048ed18",
+        "c2b6f39c-c794-4cc9-842d-96974048ed18",
+        "d8da7e6d-3bba-4325-be6a-65d33e88716f",
+        "d167a3c4-03ed-4471-90f4-585743019bb9",
+        "d167a3c4-03ed-4471-90f4-585743019bb9",
+        "8f6f6580-3157-4382-9901-036b78502968"
+      ],
+      "query_strings": [
+        "Vignette-framed sea of gradient gray mirroring the sober twilight",
+        "Drab gradient background lacking vibrancy"
+      ],
+      "is_correct": false
+    },
+    {
+      "original_picture_id": "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0",
+      "positive": "Refined",
+      "negative": "Shapeless and confusing abstract object",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "423dea1f-4724-4e95-a5e1-589ad3c734d8",
+        "f61a9853-6d20-4559-a6c6-231e18a4abc3",
+        "478ac3b6-0f49-440c-84ac-897310ca5ca5",
+        "75951bbc-11e1-4861-acfa-b910daa025d8",
+        "165ebb76-4c99-444f-8dc2-af8897986407",
+        "9a5fd5aa-d2b9-4021-8c61-931652fbceb6",
+        "28c2246d-19dd-47f6-a7f2-496e9c9e1dc9",
+        "018943a8-3180-4d42-9615-842fb21f9bbd",
+        "9dc7def9-826a-41a3-a60e-856cef523f9e",
+        "cbf5304a-69f0-43cc-9283-241361610f2a"
+      ],
+      "query_strings": [
+        "Refined",
+        "Shapeless and confusing abstract object"
+      ],
+      "is_correct": false
+    },
+    {
+      "original_picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+      "positive": "Elegant",
+      "negative": "Uninspiring architectural sketch lacking precision",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "165ebb76-4c99-444f-8dc2-af8897986407",
+        "9a5fd5aa-d2b9-4021-8c61-931652fbceb6",
+        "75951bbc-11e1-4861-acfa-b910daa025d8",
+        "478ac3b6-0f49-440c-84ac-897310ca5ca5",
+        "90f2241d-db26-46fc-a758-7fa4e6d9d691",
+        "28c2246d-19dd-47f6-a7f2-496e9c9e1dc9",
+        "585074c4-a8ed-4dd6-8d5f-2b3a3b553d0d",
+        "6387a229-c5c0-4dd3-af6b-420de20d258b",
+        "90f2241d-db26-46fc-a758-7fa4e6d9d691",
+        "468da0cc-51e7-4b79-bc15-20c029a9c159"
+      ],
+      "query_strings": [
+        "Elegant",
+        "Uninspiring architectural sketch lacking precision"
+      ],
+      "is_correct": false
+    },
+    {
+      "original_picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+      "positive": "The tranquil",
+      "negative": "Dominance of uninspiring light blues",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "56a86805-b954-4a0a-b587-e0150b63541c",
+        "55ed88d4-c93d-416f-9f3c-f1b4cbcc3e6e",
+        "244df75b-458b-43dc-9824-85e051dc65e2",
+        "75951bbc-11e1-4861-acfa-b910daa025d8",
+        "478ac3b6-0f49-440c-84ac-897310ca5ca5",
+        "9a5fd5aa-d2b9-4021-8c61-931652fbceb6",
+        "165ebb76-4c99-444f-8dc2-af8897986407",
+        "d167a3c4-03ed-4471-90f4-585743019bb9",
+        "d8da7e6d-3bba-4325-be6a-65d33e88716f",
+        "6387a229-c5c0-4dd3-af6b-420de20d258b"
+      ],
+      "query_strings": [
+        "The tranquil",
+        "Dominance of uninspiring light blues"
+      ],
+      "is_correct": false
+    },
+    {
+      "original_picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+      "positive": "Futuristic and minimalist architectural inspiration",
+      "negative": "Uninspiring architectural sketch lacking precision",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "dfc4024d-d9bb-42e7-b7af-c72f623672fb",
+        "db7eb434-9531-4598-b99b-707a386be404",
+        "25ddd8b3-13ca-4c9a-bccb-cc06605dea95",
+        "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+        "468da0cc-51e7-4b79-bc15-20c029a9c159",
+        "63e5c813-9883-4af5-8df0-c5b3f0fb261b",
+        "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0",
+        "6b541432-e291-42d0-a5d5-b88c539fc56c",
+        "dab688dd-fbbd-4f8e-938a-007834a0eb58",
+        "1135c712-811d-48fb-84cf-e48d6329e10b"
+      ],
+      "query_strings": [
+        "Futuristic and minimalist architectural inspiration",
+        "Uninspiring architectural sketch lacking precision"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+      "positive": "Sleek structures whispering modern tales in soft outlines",
+      "negative": "featureless construction language",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+        "90f2241d-db26-46fc-a758-7fa4e6d9d691",
+        "db7eb434-9531-4598-b99b-707a386be404",
+        "9a5fd5aa-d2b9-4021-8c61-931652fbceb6",
+        "2b3bd8c9-adba-4ac4-8506-8c952e46b585",
+        "1135c712-811d-48fb-84cf-e48d6329e10b",
+        "c2b6f39c-c794-4cc9-842d-96974048ed18",
+        "d41fa5fa-3f99-418e-b1f9-b7820ca772f5",
+        "174ab7bd-604f-4483-8ba8-35eae377dd11",
+        "585074c4-a8ed-4dd6-8d5f-2b3a3b553d0d"
+      ],
+      "query_strings": [
+        "Sleek structures whispering modern tales in soft outlines",
+        "featureless construction language"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+      "positive": "Illuminated by a soft glow casting ghostly shadows.",
+      "negative": "sterile modern architecture.",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "92a5d95c-6ab0-4d35-bd0b-c515060f0400",
+        "75951bbc-11e1-4861-acfa-b910daa025d8",
+        "2aefc88e-c16f-4132-a99c-80670e6e8b6c",
+        "8f6f6580-3157-4382-9901-036b78502968",
+        "9a5fd5aa-d2b9-4021-8c61-931652fbceb6",
+        "7df33602-fba7-4538-ad2e-1810ddca2d87",
+        "6387a229-c5c0-4dd3-af6b-420de20d258b",
+        "89939dd6-78aa-44e4-8ae0-fab8d354e669",
+        "a6ab242b-8fed-4eed-82e8-053b17bdb9d7",
+        "091c5997-c304-4708-b06c-3f50d2e5be4b"
+      ],
+      "query_strings": [
+        "Illuminated by a soft glow casting ghostly shadows.",
+        "sterile modern architecture."
+      ],
+      "is_correct": false
+    },
+    {
+      "original_picture_id": "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+      "positive": "Breath of tomorrow captured in minimalist architectural dance",
+      "negative": "Overly simplistic",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+        "a5bba5f2-8ca2-4a3a-bf47-eb6a86f4ab92",
+        "d2e50bae-1275-4d77-a4ce-4dc5605fccf1",
+        "25ddd8b3-13ca-4c9a-bccb-cc06605dea95",
+        "244df75b-458b-43dc-9824-85e051dc65e2",
+        "2b3bd8c9-adba-4ac4-8506-8c952e46b585",
+        "8f6f6580-3157-4382-9901-036b78502968",
+        "d167a3c4-03ed-4471-90f4-585743019bb9",
+        "3e1aa137-2301-4972-9212-0421fda319bd",
+        "816429c8-e23f-4abd-a9c0-722c7440921a"
+      ],
+      "query_strings": [
+        "Breath of tomorrow captured in minimalist architectural dance",
+        "Overly simplistic"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e",
+      "positive": "Detailed and innovative concept sketch design",
+      "negative": "Side profile view with too much empty",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "8758053f-a34a-4f8b-8694-ee20bb6295e3",
+        "33e90383-2a54-46ea-ac9d-1f34c453ed0c",
+        "62404e9b-2fd6-4709-96bb-fe5a2262001e",
+        "88dcf7e0-4379-4a2d-93af-8a7510a3275c",
+        "b6b897c3-cfd0-47a8-823f-588087a75f1a",
+        "7",
+        "c748e07e-8b34-4768-9586-e0817e6f3ce9",
+        "8957a2d8-7f38-4bb1-aab1-d06ec7338134",
+        "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+        "6b1b8043-5a69-4036-90f2-dd01290bf4fe"
+      ],
+      "query_strings": [
+        "Detailed and innovative concept sketch design",
+        "Side profile view with too much empty"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e",
+      "positive": "Detailed and innovative concept sketch design",
+      "negative": "Sketch style overly complicated and difficult to interpret",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "33e90383-2a54-46ea-ac9d-1f34c453ed0c",
+        "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+        "d41fa5fa-3f99-418e-b1f9-b7820ca772f5",
+        "88dcf7e0-4379-4a2d-93af-8a7510a3275c",
+        "b6b897c3-cfd0-47a8-823f-588087a75f1a",
+        "1135c712-811d-48fb-84cf-e48d6329e10b",
+        "63e5db15-0a71-42ec-b33c-9b77865c88e0",
+        "8758053f-a34a-4f8b-8694-ee20bb6295e3",
+        "6b541432-e291-42d0-a5d5-b88c539fc56c",
+        "1135c712-811d-48fb-84cf-e48d6329e10b"
+      ],
+      "query_strings": [
+        "Detailed and innovative concept sketch design",
+        "Sketch style overly complicated and difficult to interpret"
+      ],
+      "is_correct": false
+    },
+    {
+      "original_picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e",
+      "positive": "futuristic robotic masterpiece as the centerpiece",
+      "negative": "Single robotic subject lacks variety and engagement",
+      "pair_type": "positive_negative",
+      "retrieved_images": [
+        "d41fa5fa-3f99-418e-b1f9-b7820ca772f5",
+        "2a519739-7773-4354-85a1-fba3f6bf92c7",
+        "018943a8-3180-4d42-9615-842fb21f9bbd",
+        "c1bff9bc-02a9-474a-92ca-c937784cd5d6",
+        "a3ea17b7-cdfb-4db8-a2dc-4b57328cc7c6",
+        "a5bba5f2-8ca2-4a3a-bf47-eb6a86f4ab92",
+        "62404e9b-2fd6-4709-96bb-fe5a2262001e",
+        "816429c8-e23f-4abd-a9c0-722c7440921a",
+        "2e42a1c3-9a3d-4b1c-b491-fc27a4f513b0",
+        "8758053f-a34a-4f8b-8694-ee20bb6295e3"
+      ],
+      "query_strings": [
+        "futuristic robotic masterpiece as the centerpiece",
+        "Single robotic subject lacks variety and engagement"
+      ],
+      "is_correct": true
+    },
+    {
+      "original_picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e",
+      "positive": "Overwhelmingly white canvas accented with specks of bright scarlet",
+      "negative": "Side profile view with too much empty",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "f61a9853-6d20-4559-a6c6-231e18a4abc3",
+        "9dc7def9-826a-41a3-a60e-856cef523f9e",
+        "478ac3b6-0f49-440c-84ac-897310ca5ca5",
+        "018943a8-3180-4d42-9615-842fb21f9bbd",
+        "dfc4024d-d9bb-42e7-b7af-c72f623672fb",
+        "False",
+        "585074c4-a8ed-4dd6-8d5f-2b3a3b553d0d",
+        "0.0",
+        "d0ca6a36-1fb5-4237-84e8-e00bb7e557eb",
+        "7"
+      ],
+      "query_strings": [
+        "Overwhelmingly white canvas accented with specks of bright scarlet",
+        "Side profile view with too much empty"
+      ],
+      "is_correct": false
+    },
+    {
+      "original_picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e",
+      "positive": "Rigid body composed of a cocktail of cylinders",
+      "negative": "wasted space",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "443abae5-15be-4b90-9560-d09272182602",
+        "e065f25d-7920-47e1-8406-6de82f3d4a4f",
+        "33e90383-2a54-46ea-ac9d-1f34c453ed0c",
+        "74a3cb6c-a710-4e75-bef2-f275fac28783",
+        "d2e50bae-1275-4d77-a4ce-4dc5605fccf1",
+        "cbf5304a-69f0-43cc-9283-241361610f2a",
+        "63e5c813-9883-4af5-8df0-c5b3f0fb261b",
+        "2a519739-7773-4354-85a1-fba3f6bf92c7",
+        "1135c712-811d-48fb-84cf-e48d6329e10b",
+        "30be7066-ed3d-4295-9f14-cac27c97e1cc"
+      ],
+      "query_strings": [
+        "Rigid body composed of a cocktail of cylinders",
+        "wasted space"
+      ],
+      "is_correct": false
+    },
+    {
+      "original_picture_id": "62404e9b-2fd6-4709-96bb-fe5a2262001e",
+      "positive": "Industrial chic design with a whiff of the future",
+      "negative": "Single robotic subject lacks variety and engagement",
+      "pair_type": "noisy_negative",
+      "retrieved_images": [
+        "89939dd6-78aa-44e4-8ae0-fab8d354e669",
+        "d41fa5fa-3f99-418e-b1f9-b7820ca772f5",
+        "62404e9b-2fd6-4709-96bb-fe5a2262001e",
+        "cdaf3830-a9fc-45a0-b1b0-436a9d21dc80",
+        "2a519739-7773-4354-85a1-fba3f6bf92c7",
+        "018943a8-3180-4d42-9615-842fb21f9bbd",
+        "da3a43f2-5237-4811-949e-d980d8597ffb",
+        "c1bff9bc-02a9-474a-92ca-c937784cd5d6",
+        "1135c712-811d-48fb-84cf-e48d6329e10b",
+        "d22bfbf5-083c-4620-af1d-250f7142f11e"
+      ],
+      "query_strings": [
+        "Industrial chic design with a whiff of the future",
+        "Single robotic subject lacks variety and engagement"
+      ],
+      "is_correct": true
+    }
+  ]
+}

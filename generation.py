@@ -30,19 +30,20 @@ CONFIG = {
 client = OpenAI()
 
 def load_existing_descriptions(descriptions_dir: str = CONFIG["descriptions_dir"]) -> Dict:
-    """Load all existing descriptions from JSON files."""
+    """Load existing descriptions from the main descriptions.json file."""
     existing_descriptions = {}
     descriptions_path = Path(descriptions_dir)
+    main_file = descriptions_path / "descriptions.json"
     
-    if descriptions_path.exists():
-        for desc_file in descriptions_path.glob("descriptions.json"):
-            try:
-                with open(desc_file, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                    existing_descriptions.update(data)
-                logger.info(f"Loaded {len(data)} descriptions from {desc_file.name}")
-            except (json.JSONDecodeError, FileNotFoundError) as e:
-                logger.warning(f"Could not load {desc_file.name}: {e}")
+    if main_file.exists():
+        try:
+            with open(main_file, "r", encoding="utf-8") as f:
+                existing_descriptions = json.load(f)
+            logger.info(f"Loaded {len(existing_descriptions)} descriptions from {main_file.name}")
+        except (json.JSONDecodeError, FileNotFoundError) as e:
+            logger.warning(f"Could not load {main_file.name}: {e}")
+    else:
+        logger.info("No existing descriptions.json found - starting fresh")
     
     logger.info(f"Total existing descriptions: {len(existing_descriptions)}")
     return existing_descriptions
@@ -84,6 +85,9 @@ def encode_image_to_base64(image_path: Path) -> str:
 
 def create_prompt(image_path: Path) -> str:
     """Create the prompt with the specific image path"""
+    # Generate UUID as a string for the prompt
+    generated_uuid = str(uuid.uuid4())
+    
     return f"""
 You are a helpful assistant that will generate different descriptions given a picture.
 You will be given a picture and you will need to generate a list of descriptors for it. 
@@ -110,7 +114,7 @@ When you return the list, you are to NOT have the sub-topic in front of the desc
 
 You are to return a JSON object in the following format:
     {{
-        "id": {uuid.uuid4()},
+        "id": "{generated_uuid}",
         "path": "{image_path}",
         "description": [
             "Descriptor 1 of the picture",
@@ -118,17 +122,17 @@ You are to return a JSON object in the following format:
             "Descriptor 3 of the picture"
         ]
     }}
-The id and path have already been provided to you in the example itself, so reuse this path.
+The id and path have already been provided to you in the example itself, so reuse these exact values.
 """
 
 class Description(BaseModel):
     """
     Return the description of the picture in JSON format.
-    id: id of the picture
+    id: id of the picture (UUID string)
     path: path of the picture
     description: list of descriptions of the picture
     """
-    id: int
+    id: str  # Changed from int to str to handle UUIDs
     path: str
     description: list[str]
 
@@ -166,6 +170,14 @@ def process_single_image(image_path: Path, idx: int) -> Dict:
             if not all(key in description_data for key in ["id", "path", "description"]):
                 raise ValueError(f"Missing required fields in response: {description_data}")
             
+            # Validate that the ID is a proper string (not Infinity, null, etc.)
+            if not isinstance(description_data["id"], str) or not description_data["id"].strip():
+                raise ValueError(f"Invalid ID in response: {description_data['id']}")
+            
+            # Additional validation - ensure description is a list
+            if not isinstance(description_data["description"], list):
+                raise ValueError(f"Description must be a list, got: {type(description_data['description'])}")
+            
             logger.info(f"Successfully processed: {image_path.name}")
             return description_data
             
@@ -188,7 +200,7 @@ def process_single_image(image_path: Path, idx: int) -> Dict:
     }
 
 def save_descriptions(new_descriptions: Dict, descriptions_dir: str = CONFIG["descriptions_dir"]) -> Optional[str]:
-    """Save new descriptions to a numbered JSON file."""
+    """Save new descriptions by merging them into the main descriptions.json file."""
     if not new_descriptions:
         logger.info("No new descriptions to save.")
         return None
@@ -196,31 +208,33 @@ def save_descriptions(new_descriptions: Dict, descriptions_dir: str = CONFIG["de
     # Create descriptions folder if it doesn't exist
     os.makedirs(descriptions_dir, exist_ok=True)
     
-    # Get next file number
-    try:
-        existing_files = [f for f in os.listdir(descriptions_dir) 
-                         if f.startswith("descriptions_") and f.endswith(".json")]
-        if existing_files:
-            numbers = []
-            for f in existing_files:
-                try:
-                    num = int(f.replace("descriptions_", "").replace(".json", ""))
-                    numbers.append(num)
-                except ValueError:
-                    continue
-            next_num = max(numbers) + 1 if numbers else 1
-        else:
-            next_num = 1
-    except FileNotFoundError:
-        next_num = 1
+    # Path to the main descriptions file
+    main_descriptions_file = f"{descriptions_dir}/descriptions.json"
     
-    # Save to file
-    output_file = f"{descriptions_dir}/descriptions_{next_num}.json"
     try:
-        with open(output_file, "w", encoding='utf-8') as f:
-            json.dump(new_descriptions, f, indent=2, ensure_ascii=False)
-        logger.info(f"Saved {len(new_descriptions)} new descriptions to {output_file}")
-        return output_file
+        # Load existing descriptions from the main file
+        existing_descriptions = {}
+        if os.path.exists(main_descriptions_file):
+            try:
+                with open(main_descriptions_file, "r", encoding="utf-8") as f:
+                    existing_descriptions = json.load(f)
+                logger.info(f"Loaded {len(existing_descriptions)} existing descriptions from {main_descriptions_file}")
+            except (json.JSONDecodeError, FileNotFoundError) as e:
+                logger.warning(f"Could not load existing descriptions: {e}. Starting fresh.")
+                existing_descriptions = {}
+        
+        # Merge new descriptions with existing ones
+        merged_descriptions = existing_descriptions.copy()
+        merged_descriptions.update(new_descriptions)
+        
+        # Save the merged descriptions back to the main file
+        with open(main_descriptions_file, "w", encoding='utf-8') as f:
+            json.dump(merged_descriptions, f, indent=2, ensure_ascii=False)
+        
+        logger.info(f"Successfully merged {len(new_descriptions)} new descriptions into {main_descriptions_file}")
+        logger.info(f"Total descriptions in file: {len(merged_descriptions)}")
+        return main_descriptions_file
+        
     except Exception as e:
         logger.error(f"Failed to save descriptions: {e}")
         raise
@@ -241,13 +255,13 @@ def main(image_folder: str = CONFIG["image_folder"],
         return None
     
     # Process images
-    descriptions = existing_descriptions.copy()
+    new_descriptions = {}
     successful_count = 0
     error_count = 0
     
     for idx, image_path in enumerate(new_image_files, 1):
         result = process_single_image(image_path, idx)
-        descriptions[image_path.name] = result
+        new_descriptions[image_path.name] = result
         
         if "error" in result:
             error_count += 1
@@ -259,8 +273,7 @@ def main(image_folder: str = CONFIG["image_folder"],
             logger.info(f"Progress: {idx}/{len(new_image_files)} images processed "
                        f"({successful_count} successful, {error_count} errors)")
     
-    # Save only new descriptions
-    new_descriptions = {k: v for k, v in descriptions.items() if k not in existing_descriptions}
+    # Save new descriptions by merging with existing ones
     output_file = save_descriptions(new_descriptions, descriptions_dir)
     
     logger.info(f"Processing complete! {successful_count} successful, {error_count} errors")
