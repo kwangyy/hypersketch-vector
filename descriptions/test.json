@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "positive": "public place Concrete building with glass box on the roof. Lush green planting tropical style. Grass out front of the building. designed by Herzog & De Meuron, architecture exterior design concept, natural light , hyperrealistic, minimalist, 8K, Fuji Eterna",
+        "negative": "Cloudy skies, bright sunlight"
+    },
+    {
+        "id": 2,
+        "positive": "public furniture in beanbags, cushions, rugs, tv console, floor lamp, low tables, painted solid wall, ceiling, indoors, hyperrealistic, Fuji Eterna , 8K",
+        "negative": "Door, curtain, door handle, knob, curtain, black window glass frame, outdoors"
+    },
+    {
+        "id": 3,
+        "positive": "ghibli illustration of ( my melody :1.3), black and white Anime style, ( Hayao Miyazaki style), , detailed background, Toradora style hello kitty",
+        "negative": ""
+    },
+    {
+        "id": 4,
+        "positive": "colourful fabric lounge chairs and outdoor caf\u00e9 chairs arranged around low terrazzo tables. Each seat is accented with patterned pillows. cafe, outdoor, sunny, silver frame glass windows, painted wall, painted door, grey concrete floor, hyperrealistic, Fuji Eterna , 8K",
+        "negative": ""
+    },
+    {
+        "id": 5,
+        "positive": "starck automotive cockpit design, photorealistic, . , Designed by Thomas Ingenlath, bright natural light, satin Saffron, 8K",
+        "negative": ""
+    }
+]

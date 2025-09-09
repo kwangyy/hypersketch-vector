@@ -35,8 +35,15 @@ def preprocess_embedding(prompt, lambda_value = 0.9):
     positive_embedding * lambda_value - negative_embedding * (1 - lambda_value)
     We normalize the embedding to have a unit length.
     """
-    positive_embedding = np.array(embed(prompt[0]))
-    negative_embedding = np.array(embed(prompt[1]))
-    combined_embedding = normalize_embedding(positive_embedding * lambda_value - negative_embedding * (1 - lambda_value))
-    # Convert back to Python list for Pinecone compatibility
-    return combined_embedding.tolist()
+    if len(prompt) == 0:
+        print("Prompt is empty")
+        return None
+    try:
+        positive_embedding = np.array(embed(prompt[0])) if prompt[0] != "" else np.zeros(1536)
+        negative_embedding = np.array(embed(prompt[1])) if prompt[1] != "" else np.zeros(1536)
+        combined_embedding = normalize_embedding(positive_embedding * lambda_value - negative_embedding * (1 - lambda_value))
+        # Convert back to Python list for Pinecone compatibility
+        return combined_embedding.tolist()
+    except Exception as e:
+        print(f"Error preprocessing embedding: {e}")
+        return None
