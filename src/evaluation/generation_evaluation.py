@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 # Configuration
 CONFIG = {
-    "descriptions_dir": "descriptions",
+    "descriptions_dir": "data/descriptions",
     "model": "gpt-4", 
     "max_retries": 3,
     "batch_size": 10  # Process in batches for better progress tracking

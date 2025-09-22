@@ -19,9 +19,9 @@ logger = logging.getLogger(__name__)
 
 # Configuration
 CONFIG = {
-    "image_folder": "Kwang Yang SREF Tests",
-    "descriptions_dir": "descriptions",
-    "model": "gpt-5", 
+    "image_folder": "data/images",
+    "descriptions_dir": "data/descriptions",
+    "model": "gpt-4o", 
     "image_extensions": {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.webp'},
     "max_retries": 3,
     "batch_size": 10  # Process in batches for better progress tracking

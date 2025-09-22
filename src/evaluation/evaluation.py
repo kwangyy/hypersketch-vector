@@ -3,6 +3,9 @@ import pandas as pd
 from pinecone import Pinecone
 import os
 from dotenv import load_dotenv
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'retrieval'))
 from arithmetic import preprocess_embedding, embed
 from retrieval import retrieve
 import random
@@ -10,7 +13,7 @@ import numpy as np
 
 load_dotenv()
 
-def load_evaluation_data(file_path: str = "descriptions/evaluation.json"):
+def load_evaluation_data(file_path: str = "data/descriptions/evaluation.json"):
     """Load evaluation data from JSON file."""
     with open(file_path, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -280,7 +283,7 @@ def analyze_lambda_sweep_results(df):
         'full_results': df
     }
 
-def save_eval_results(results, accuracy_stats, output_file: str = "descriptions/eval_results.json"):
+def save_eval_results(results, accuracy_stats, output_file: str = "data/descriptions/eval_results.json"):
     """Save evaluation results to JSON file in descriptions folder."""
     eval_data = {
         "accuracy_stats": accuracy_stats,
@@ -293,7 +296,7 @@ def save_eval_results(results, accuracy_stats, output_file: str = "descriptions/
     print(f"Overall Accuracy: {accuracy_stats['overall_accuracy']:.2%}")
     print(f"Correct: {accuracy_stats['correct_retrievals']}/{accuracy_stats['total_queries']}")
 
-def save_lambda_sweep_results(analysis_results, output_dir: str = "results"):
+def save_lambda_sweep_results(analysis_results, output_dir: str = "data/results"):
     """Save lambda sweep results as CSV files and summary."""
     os.makedirs(output_dir, exist_ok=True)
     

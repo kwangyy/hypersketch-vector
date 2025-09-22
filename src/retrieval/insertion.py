@@ -3,6 +3,9 @@ import os
 import json 
 import time
 from typing import List, Dict, Set
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from arithmetic import embed
 from dotenv import load_dotenv
 
@@ -39,11 +42,13 @@ def get_existing_picture_ids():
     try:
         existing_picture_ids = set()
         
-        # Use list() to get all vector IDs - it returns a generator
-        list_result = index.list()
-        
+        vector_lists = list(index.list())
+        vector_ids = []
+        for vector_list in vector_lists:
+            vector_ids.extend(list(vector_list))
+
         # Extract picture IDs from vector IDs
-        for vector_id in list_result:
+        for vector_id in vector_ids:
             # Vector IDs are in format: picture_id_description_index
             # So we need to extract the picture_id part (everything before the last underscore)
             if '_' in vector_id:
@@ -52,6 +57,7 @@ def get_existing_picture_ids():
             else:
                 # If no underscore, it might be a direct picture_id (legacy format)
                 existing_picture_ids.add(vector_id)
+        
         
         return existing_picture_ids
         
@@ -203,7 +209,7 @@ def main():
     """
     # Load descriptions
     print("📂 Loading descriptions...")
-    with open("descriptions/descriptions.json", "r", encoding="utf-8") as f:
+    with open("data/descriptions/descriptions.json", "r", encoding="utf-8") as f:
         descriptions = json.load(f)
 
     print(f"📊 Found {len(descriptions)} pictures in descriptions file")

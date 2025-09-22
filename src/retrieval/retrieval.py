@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from arithmetic import preprocess_embedding
 import random
 from pinecone import Pinecone

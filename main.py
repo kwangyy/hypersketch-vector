@@ -1,7 +1,7 @@
-from retrieval import retrieve
+from src.retrieval.retrieval import retrieve
 import json
 
-with open("descriptions/test.json", "r", encoding="utf-8") as f:
+with open("data/descriptions/test.json", "r", encoding="utf-8") as f:
     descriptions = json.load(f)
 
 for description in descriptions:
@@ -9,7 +9,7 @@ for description in descriptions:
     picture_id = retrieve(query)
     description["retrieved_picture_id"] = picture_id
 
-with open("descriptions/picture_id.json", "r", encoding="utf-8") as f:
+with open("data/descriptions/picture_id.json", "r", encoding="utf-8") as f:
     picture_id = json.load(f)
 
 # Add the path to each description based on the retrieved picture_id
@@ -21,6 +21,6 @@ for description in descriptions:
         description["path"] = None  # Handle case where ID not found
 
 
-with open("descriptions/test_results.json", "w", encoding="utf-8") as f:
+with open("data/descriptions/test_results.json", "w", encoding="utf-8") as f:
     json.dump(descriptions, f)
     
